@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="V SCHOOL CODE CENTER offers coding education and resources to help you advance in your career.">
+    <title>V SCHOOL CODE CENTER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* General Reset */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f9f9f9;
+            color: #444;
+            line-height: 1.6;
+        }
+        header {
+            background: #343a40;
+            color: #f8f9fa;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin: 0 1rem;
+        }
+        nav a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            background: #17a2b8;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .advice-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        .advice-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .call-now-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        .call-now-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebe53;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #17a2b8;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .card ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        .roadmap-content {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background: #343a40;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .login-form, .contact-info, .signup-form {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
+            background-color: #17a2b8;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #138496;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%; /* Adjusted for better appearance */
+            border-radius: 8px;
+            text-align: center; /* Center-align the text */
+        }
+        .modal-content h2 {
+            color: #17a2b8; /* Highlight the header color */
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .modal-content h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .modal-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 0;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 0.5rem 0;
+            }
+            .hero {
+                padding: 1rem;
+            }
+            .modal-content {
+                width: 90%;
+            }
+        }
+        #dialog {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#dialog h2 {
+    color: #17a2b8;
+    font-size: 1.8rem;
+}
+
+#dialog p {
+    font-size: 1.2rem;
+    color: #555;
+}
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    /* Adjustments for very small screens */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .section h2 {
+        font-size: 1.5rem;
+    }
+    .card h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    /* Adjustments for tablets and small desktops */
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Adjustments for larger screens if needed */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+/* For vertical navigation on small screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li {
+        margin: 0.5rem 0;
+    }
+}
+/* Ensure touch-friendly buttons */
+button, .call-now-button, .whatsapp-button, .advice-button {
+    min-width: 48px;
+    min-height: 48px;
+    line-height: 48px;
+    padding: 0.75rem 1.5rem;
+}
+/* Container styling */
+.contact-info {
+    background-color: #ffffff; /* White background for clarity */
+    border-radius: 10px;        /* More rounded corners */
+    padding: 20px;              /* Consistent padding */
+    margin: 20px 0;             /* Spacing above and below */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
+    max-width: 600px;           /* Restrict width for better alignment on larger screens */
+    margin-left: auto;          /* Center the container horizontally */
+    margin-right: auto;         /* Center the container horizontally */
+}
+
+/* Heading styling */
+.contact-info h3 {
+    font-size: 1.75em;          /* Larger heading size */
+    color: #333;                /* Darker color for better readability */
+    margin-bottom: 15px;        /* Increased space below heading */
+    text-align: center;         /* Center align the heading */
+}
+
+/* Paragraph styling */
+.contact-info p {
+    font-size: 1.1em;           /* Slightly larger font for better readability */
+    color: #555;                /* Slightly lighter text color */
+    margin-bottom: 15px;        /* Space between paragraphs */
+    text-align: center;         /* Center align the text */
+}
+
+/* Button styling */
+.contact-button {
+    display: inline-flex;       /* Align text and icon */
+    align-items: center;        /* Center items vertically */
+    text-decoration: none;      /* Remove underline */
+    border-radius: 5px;         /* Rounded corners */
+    padding: 10px 15px;         /* Adequate padding */
+    color: #ffffff;             /* White text */
+    font-weight: 600;           /* Semi-bold text for emphasis */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    margin: 0 5px;              /* Space between buttons */
+}
+
+/* Call Now button styling */
+.call-now-button {
+    background-color: #007bff;  /* Primary blue color */
+}
+
+/* WhatsApp button styling */
+.whatsapp-button {
+    background-color: #25D366;  /* WhatsApp green color */
+}
+
+/* Icon styling */
+.contact-button i {
+    margin-right: 8px;          /* Space between icon and text */
+}
+
+/* Hover effects */
+.call-now-button:hover,
+.whatsapp-button:hover {
+    background-color: #0056b3;  /* Darker blue on hover for Call Now */
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebe6b;  /* Darker green on hover for WhatsApp */
+    transform: scale(1.05);     /* Slightly enlarge the button */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contact-info {
+        padding: 15px;         /* Adjust padding for smaller screens */
+        margin: 15px 0;        /* Adjust margin for smaller screens */
+    }
+
+    .contact-info h3 {
+        font-size: 1.5em;      /* Adjust font size for smaller screens */
+    }
+
+    .contact-info p {
+        font-size: 1em;        /* Adjust font size for smaller screens */
+    }
+
+    .contact-button {
+        font-size: 0.9em;      /* Adjust font size for smaller screens */
+        padding: 8px 12px;     /* Adjust padding for smaller screens */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to V SCHOOL CODE CENTER</h1>
+            <p>Your pathway to becoming a coding expert.</p>
+            <a href="#" class="advice-button" onclick="showModal()">Get Personalized Advice</a>
+        </div>
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>At V SCHOOL CODE CENTER, our mission is to provide top-notch coding education and resources to help individuals excel in their tech careers. We focus on practical skills and hands-on learning to ensure our students are well-prepared for the industry.</p>
+            </div>
+            <div class="card">
+                <h3>Our Team</h3>
+                <p>Our team consists of experienced developers and educators who are passionate about coding and teaching. We bring a wealth of knowledge and real-world experience to our training programs, ensuring that our students receive the best possible education.</p>
+            </div>
+            <div class="card">
+                <h3>Our Approach</h3>
+                <p>We believe in a hands-on, project-based approach to learning. Our courses are designed to give students practical experience with real-world projects, helping them build a portfolio and gain confidence in their coding skills.</p>
+            </div>
+        </section>
+        
+
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <div class="card">
+                <h3>Frontend Development</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript & TypeScript</li>
+                    <li>React, Angular, Vue.js</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Backend Development</h3>
+                <ul>
+                    <li>Node.js, Python, Java</li>
+                    <li>Ruby, PHP, Go</li>
+                    <li>Database Management</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Full-Stack Development</h3>
+                <ul>
+                    <li>Combining Frontend & Backend Skills</li>
+                    <li>End-to-End Application Development</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            </div>
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Call us at 
+                    <a href="tel:+254110173956" class="contact-button call-now-button">
+                        <i class="fas fa-phone-alt"></i> Call Now
+                    </a>
+                </p>
+                <p>Message us on 
+                    <a href="https://wa.me/+254110173956" class="contact-button whatsapp-button">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </p>
+            </div>
+            
+        </section>
+    </div>
+
+    <!-- The Modal -->
+<div id="adviceModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="dialog">
+            <h2>Personalized Advice</h2>
+            <div id="adviceForm">
+                <form onsubmit="handleFormSubmit(); return false;">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">Your Interest (e.g., Frontend, Backend, Full-Stack):</label>
+                        <input type="text" id="interests" name="interests" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div id="greetingMessage" style="display:none;"></div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2024 V SCHOOL CODE CENTER. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showModal() {
+            document.getElementById('adviceModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('adviceModal').style.display = 'none';
+            document.getElementById('adviceForm').style.display = 'block';
+            document.getElementById('greetingMessage').style.display = 'none';
+        }
+
+        function handleFormSubmit() {
+    // Get the user's name from the form
+    var name = document.getElementById('name').value;
+    var interests = document.getElementById('interests').value.toLowerCase();
+    var currentDate = new Date();
+    var hours = currentDate.getHours();
+    var month = currentDate.getMonth() + 1; // January is 0, so add 1
+    var greeting = '';
+    var seasonGreeting = '';
+
+    // Determine the time of day and set the appropriate greeting
+    if (hours >= 5 && hours < 12) {
+        greeting = 'Good morning';
+    } else if (hours >= 12 && hours < 17) {
+        greeting = 'Good afternoon';
+    } else if (hours >= 17 && hours < 21) {
+        greeting = 'Good evening';
+    } else {
+        greeting = 'Have a lovely night';
+    }
+
+    // Determine the season based on the month
+    if (month >= 3 && month <= 5) {
+        seasonGreeting = 'Spring has arrived!';
+    } else if (month >= 6 && month <= 8) {
+        seasonGreeting = 'Enjoy the summer vibes!';
+    } else if (month >= 9 && month <= 11) {
+        seasonGreeting = 'Autumn is here!';
+    } else {
+        seasonGreeting = 'Winter is coming!';
+    }
+
+    // Create a personalized message
+    var personalizedMessage = `Hello, ${name}! ${greeting}. ${seasonGreeting} Based on your interest in ${interests}, here’s some advice:`;
+    var advice = '';
+
+    // Determine the appropriate advice based on the user's interests
+    if (interests.includes('frontend')) {
+        advice = `
+            When it comes to frontend development, several programming languages and technologies are commonly used to create interactive and visually appealing websites and applications. Here’s a rundown of the key languages and tools:
+            <ol>
+                <li><strong>HTML (HyperText Markup Language)</strong>: Structures the content on the web. Defines elements like headings, paragraphs, links, images, and other content.</li>
+                <li><strong>CSS (Cascading Style Sheets)</strong>: Styles and layouts the content defined by HTML. Controls the look and feel of a website, including colors, fonts, spacing, and positioning.</li>
+                <li><strong>JavaScript</strong>: Adds interactivity and dynamic behavior to web pages. Enables things like form validation, animations, and asynchronous data loading.</li>
+                <li><strong>TypeScript</strong>: A superset of JavaScript that adds static types. Helps catch errors early and improve code maintainability. Often used with modern frameworks.</li>
+                <li><strong>Frameworks and Libraries</strong>: React (JavaScript/TypeScript), Angular (TypeScript), Vue.js (JavaScript), Svelte (JavaScript).</li>
+                <li><strong>CSS Preprocessors</strong>: Sass, LESS.</li>
+                <li><strong>CSS-in-JS</strong>: Styled-components, Emotion.</li>
+                <li><strong>Other Technologies</strong>: WebAssembly (Wasm).</li>
+            </ol>
+        `;
+    } else if (interests.includes('backend')) {
+        advice = `
+            For backend development, various programming languages are used to build the server-side logic and handle operations like database interactions, authentication, and business logic. Here’s a list of popular backend languages:
+            <ol>
+                <li><strong>JavaScript (Node.js)</strong>: Handles asynchronous operations and event-driven programming. Often used with frameworks like Express.js.</li>
+                <li><strong>Python</strong>: Known for its readability and simplicity. Commonly used with frameworks like Django and Flask.</li>
+                <li><strong>Java</strong>: Often used in enterprise environments. Frameworks like Spring and Java EE facilitate building robust backend systems.</li>
+                <li><strong>C#</strong>: Primarily used on the .NET framework. Commonly used with ASP.NET for building scalable web applications and services.</li>
+                <li><strong>Ruby</strong>: Known for its elegant syntax and developer productivity. Often used with Ruby on Rails.</li>
+                <li><strong>PHP</strong>: Designed for web development. Widely used for server-side scripting.</li>
+                <li><strong>Go (Golang)</strong>: Known for concurrency support and performance. Used for building scalable and high-performance applications.</li>
+                <li><strong>Rust</strong>: Focused on performance and safety. Increasingly used for high-performance web services.</li>
+                <li><strong>Kotlin</strong>: Runs on the JVM and is interoperable with Java. Increasingly used for backend development in addition to Android.</li>
+            </ol>
+        `;
+    } else if (interests.includes('full-stack')) {
+        advice = `
+            Full-stack development involves both frontend and backend technologies. It requires knowledge across the entire development stack, including the following:
+            <ol>
+                <li><strong>Frontend Technologies</strong>: HTML, CSS, JavaScript, frameworks like React, Angular, Vue.js.</li>
+                <li><strong>Backend Technologies</strong>: Server-side languages such as Node.js, Python, Java, C#, PHP, Ruby.</li>
+                <li><strong>Database Management</strong>: Understanding relational databases (e.g., MySQL, PostgreSQL) and NoSQL databases (e.g., MongoDB).</li>
+                <li><strong>APIs</strong>: Designing and integrating APIs (RESTful, GraphQL).</li>
+                <li><strong>DevOps Skills</strong>: Familiarity with deployment, version control (e.g., Git), CI/CD pipelines, containerization (e.g., Docker).</li>
+                <li><strong>Soft Skills</strong>: Communication, problem-solving, and project management.</li>
+            </ol>
+        `;
+    } else {
+        advice = `It seems like you're interested in a diverse range of topics. Feel free to explore various areas of coding to find your passion and specialize accordingly.`;
+    }
+
+    // Display the personalized message and advice
+    document.getElementById('greetingMessage').innerHTML = `
+        <h2>${personalizedMessage}</h2>
+        <p>${advice}</p>
+    `;
+    document.getElementById('adviceForm').style.display = 'none';
+    document.getElementById('greetingMessage').style.display = 'block';
+}
+
+    </script>
+</body>
+</html>
